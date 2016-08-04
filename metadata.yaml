@@ -1,0 +1,47 @@
+_repo: Characters-of-Shakespeare-s-Plays_5085
+_version: 0.0.1
+contributor:
+  author_of_introduction:
+    agent_name: Quiller-Couch, Arthur
+    aliases:
+    - Quiller-Couch, Sir Arthur Thomas
+    - Quiller-Couch, Arthur Thomas
+    - Quiller-Couch, A. T. (Arthur Thomas)
+    - Q
+    birthdate: 1863
+    deathdate: 1944
+    gutenberg_agent_id: '3579'
+    url: http://www.gutenberg.org/2009/agents/3579
+    wikipedia: http://en.wikipedia.org/wiki/Arthur_Quiller-Couch
+creator:
+  author:
+    agent_name: Hazlitt, William
+    birthdate: 1778
+    deathdate: 1830
+    gutenberg_agent_id: '800'
+    url: http://www.gutenberg.org/2009/agents/800
+    wikipedia: http://en.wikipedia.org/wiki/William_Hazlitt
+description: ''
+gutenberg_issued: '2004-02-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '5085'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Shakespeare, William, 1564-1616 -- Characters'
+- !lcc 'PR'
+- GITenberg
+tableOfContents: Cymbeline -- Macbeth -- Julius Caesar -- Othello -- Timon of Athens
+  -- Coriolanus -- Troilus and Cressida -- Antony and Cleopatra -- Hamlet -- The tempest
+  -- The midsummer night's dream -- Romeo and Juliet -- Lear -- Richard II -- Henry
+  IV in two parts -- Henry V -- Henry VI in three parts -- Richard III -- Henry VIII
+  -- King John -- Twelfth night; or, What you will -- The two gentlemen of Verona
+  -- The merchant of Venice -- The winter's tale -- All's well that ends well -- Love's
+  labour's lost -- Much ado about nothing -- As you like it -- The taming of the shrew
+  -- Measure for measure -- The merry wives of Windsor -- The comedy of errors --
+  Doubtful plays of Shakespeare -- Poems and sonnets.
+title: Characters of Shakespeare's Plays
+url: http://www.gutenberg.org/ebooks/5085
