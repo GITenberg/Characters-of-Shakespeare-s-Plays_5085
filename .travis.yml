@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: G2Inv1+AVKJYSkDBR4Nl2iBbBsWPLTTNCfCK8Zg4jeqAgQF0GP5GuCg5IDEitLZGOOnA/pmOqqznfV8Yd8JvVkLNBQr5Y6kG9mx5+MhMuAZt7UEfKClY12Wx11G84lzr9n7OgipAK4egvVUtc8mGA/VqUfEARC7uQAAwVGvufwYBPZST8xMbsGwjkAqMFy7xHF3JghG4Kjri/jDSLdE3Q3SFY0wH/dCKMjnzLVBU6PIkZgjZukEa0TvoCmv+czv9Yys1VdwCh43LywggVsw3zSJRFOOs2Tov8D5YltTBP/l++J73yJIsxwjDRpmDnPwR/6NRmuISTjcgrpKG51HoPyMYMMCN36kNkcrfUgDAUyiJHc/iwgNQPh646H6vZ22YfO7vf1NT3SDn4IwPSjoN54oKMq+V3xqqkszJuIjIV4nMMWyJGyT0CkrXIDGJafI0dMysgDoybBW+H8MJrpXg17GXgwI3Vg3hpxrcyNRwKQRHo/fmGrM0LJhnx7hclR8Ii+VZJ3l6tPQtOFELwdyqUkOCvSRuUoA72dlc6Q1gMjed/P9Ke7eJCq30enG8X5ob2EsyqlUdwQ4/y+Slwxhxdw/6cVxJulL6i25Q/Vt4u25hidBp+J/KgqZ7aIf6SlUISU9KD8nnLWWonxamgOdqnLMlZIoYWO0URron/JIk9a8=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Characters-of-Shakespeare-s-Plays_5085
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
