@@ -1,5 +1,5 @@
 _repo: Characters-of-Shakespeare-s-Plays_5085
-_version: 0.1.0
+_version: 0.2.0
 contributor:
   author_of_introduction:
     agent_name: Quiller-Couch, Arthur
@@ -13,6 +13,9 @@ contributor:
     gutenberg_agent_id: '3579'
     url: http://www.gutenberg.org/2009/agents/3579
     wikipedia: http://en.wikipedia.org/wiki/Arthur_Quiller-Couch
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Hazlitt, William
@@ -22,6 +25,8 @@ creator:
     url: http://www.gutenberg.org/2009/agents/800
     wikipedia: http://en.wikipedia.org/wiki/William_Hazlitt
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/5085#Characters-of-Shakespeare-s-Plays
 gutenberg_issued: '2004-02-01'
 gutenberg_type: Text
 identifiers:
